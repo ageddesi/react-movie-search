@@ -5,12 +5,11 @@ const Pagination = ({ total, perPage, currentPage, callBack }) => {
         <div className="mt-5 flex flex-1 items-center justify-between">
           <div className="mr-10">
             <p className="text-sm text-gray-700">
-              Showing{' '}
+              Showing page {' '}
               <span className="font-medium">
-                {(currentPage - 1) * perPage + 1}
+                {(currentPage)}
               </span>{' '}
-              to <span className="font-medium">{currentPage * perPage}</span> of{' '}
-              <span className="font-medium">{total}</span> results
+              of <span className="font-medium">{totalPages}</span>
             </p>
           </div>
           <div>
