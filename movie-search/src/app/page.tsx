@@ -33,7 +33,7 @@ export default function Home() {
     });
     if(movies.success){
       setMovies(movies.body.movieData)
-      setPaginationData({...paginationData, ...{ totalPages: movies.body.totalPages, page : params.page}})
+      setPaginationData({...paginationData, ...{ totalPages: movies.body.totalPages, currentPage : params.page}})
       setPerformedSearch(true)
     } else {
       setAppError(movies.message)
@@ -42,8 +42,9 @@ export default function Home() {
 
   }
 
-  const handlePaginationChange = (page: number) => {
-    getMovies({search: currentSearchTerm, limit: paginationData.perPage, page: page});
+  const handlePaginationChange = async (page: number) => {
+    setFilterBy('none')
+    await handleSearchSubmit({search: currentSearchTerm, page: page})
   }
 
   useEffect(() => {    
@@ -77,7 +78,7 @@ export default function Home() {
       <SearchBar handleSubmit={(value : string) => {handleSearchSubmit({search: value})}} />
       {genres.length > 0 && (
         <div className="flex gap-2 mt-2"> 
-          <div>Filter results by genre:
+          <div>Filter this pages results by genre:
           </div>
           <select name="cars" id="cars" onChange={(event) => {
               setFilterBy(event.target.value)
