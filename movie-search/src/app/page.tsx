@@ -23,7 +23,7 @@ export default function Home() {
   const [genres, setGenres] = useState([] as string[])
   const [filterBy, setFilterBy] = useState('none')
 
-  const handleSearchSubmit = async (params: { page?: number, limit?: number, search: string, genre?: string }) => {
+  const handleSearchSubmit = async (params: { page: number, limit?: number, search: string, genre?: string }) => {
     setAppLoading(true)
     setCurrentSearchTerm(params.search);
     const movies : MovieUtilsResponse = await getMovies({
