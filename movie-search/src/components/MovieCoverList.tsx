@@ -19,8 +19,10 @@ const MovieCoverList = ({ movies }: { movies: Movie[] }) => {
                     </div>
                     <div className="w-72 absolute top-0 left-full  rounded-xl h-full group-hover:left-0">
                         <div className="mt-20 bg-white h-full p-2 overflow-x-auto">
-                            <p className="text-sm font-bold text-black ">Rating: {movie.ratingValue}</p>
+                            <p className="text-sm font-bold text-black ">Rating: <span className="text-gray-600">{movie.ratingValue}</span></p>
                             <p className="text-sm font-bold text-black mt-2">{movie.summary}</p>
+                            <p className="text-sm font-bold text-black mt-2">Duration: <span className="text-gray-600">{movie.duration.replace('PT', '')}</span></p>
+                            
                         </div>
                     </div>
                 </div>
