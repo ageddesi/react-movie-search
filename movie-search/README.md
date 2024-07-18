@@ -4,7 +4,7 @@ This project was interesting for me, I have spent the last few years building re
 
 Outside of my work I use a framework called Redwoodjs which is an on rails experience for REACT websites on side projects.
 
-Given more time on the project, I would have liked to create a second page that uses the graphql implementation instead of the REST endpoints. I would have also like to have added a like feature that would then using AI recommend additional movies you may like based on those selected.
+Given more time on the project, I would have liked to create a second page that uses the graphql implementation instead of the REST endpoints. I would have also like to have added a like feature that would then using AI recommend additional movies you may like based on those
 
 ----
 

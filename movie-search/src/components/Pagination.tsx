@@ -1,4 +1,11 @@
-const Pagination = ({ total, perPage, currentPage, callBack }) => {
+type PaginationParams = {
+  total: number
+  perPage: number
+  currentPage: number
+  callBack: (page:number) => void
+}
+
+const Pagination = ({ total, perPage, currentPage, callBack } : PaginationParams) => {
     const totalPages = Math.ceil(total / perPage)
   
     return (
