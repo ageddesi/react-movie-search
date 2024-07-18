@@ -1,3 +1,13 @@
+## About the approach
+
+This project was interesting for me, I have spent the last few years building react feature apps to be embedded inside of AEM (Adobe Experience Manager), as such I have not had the chance to use Next yet. I decided to use this framework on top of REACT to see what everyone is excited about. 
+
+Outside of my work I use a framework called Redwoodjs which is an on rails experience for REACT websites on side projects.
+
+Given more time on the project, I would have liked to create a second page that uses the graphql implementation instead of the REST endpoints. I would have also like to have added a like feature that would then using AI recommend additional movies you may like based on those selected.
+
+----
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
