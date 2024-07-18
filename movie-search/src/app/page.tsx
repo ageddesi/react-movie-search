@@ -3,7 +3,7 @@ import MovieCoverList from "@/components/MovieCoverList";
 import Pagination from "@/components/Pagination";
 import SearchBar from "@/components/SearchBar";
 import { Movie } from "@/types/movie";
-import { getMovies, MovieUtilsResponse } from "@/utils/movieDb";
+import { getMovies, initMovieDb, MovieUtilsResponse } from "@/utils/movieDb";
 import { useEffect, useState } from "react";
 
 
@@ -47,6 +47,10 @@ export default function Home() {
     await handleSearchSubmit({search: currentSearchTerm, page: page})
   }
 
+  useEffect(() => {
+    initMovieDb();
+  }, [])
+
   useEffect(() => {    
     if(movies.length > 0){
       const uniqueGenres = new Set();
@@ -75,7 +79,7 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center p-24">
       <p className="text-xl text-gray-500 mt-5">Search for a movie</p>
-      <SearchBar handleSubmit={(value : string) => {handleSearchSubmit({search: value})}} />
+      <SearchBar handleSubmit={(value : string) => {handleSearchSubmit({search: value, page: 1})}} />
       {genres.length > 0 && (
         <div className="flex gap-2 mt-2"> 
           <div>Filter this pages results by genre:
@@ -97,7 +101,7 @@ export default function Home() {
           <p>Loading...</p>
         </div>
       )}
-      {peformedSearch && movies.length > 0 && (
+      {!appLoading && peformedSearch && movies.length > 0 && (
         <>
           <MovieCoverList movies={filteredMovies} />
           <Pagination 

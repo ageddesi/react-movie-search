@@ -7,7 +7,7 @@ const Pagination = ({ total, perPage, currentPage, callBack }) => {
             <p className="text-sm text-gray-700">
               Showing page {' '}
               <span className="font-medium">
-                {(currentPage)}
+                {currentPage}
               </span>{' '}
               of <span className="font-medium">{totalPages}</span>
             </p>
